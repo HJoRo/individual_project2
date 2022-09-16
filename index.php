@@ -9,10 +9,15 @@ if ($action == NULL) {
         $action = 'view_all_rooms';
     }
 }
-
+//NEED TO GET DATE_ADDED COLUMN TO SHOW UP IN DETAILS ARRAY
 
 switch($action) {
     case 'view_all_rooms':
+        //TEST AREA TEST TEST
+        global $db;
+        $query = 'SELECT * FROM plants';
+        $stm = $db->prepare($query);
+        $result = $stm->execute();
         //get array of room data
         $rooms = get_rooms();
         include('view/list_rooms.php');
@@ -39,28 +44,45 @@ switch($action) {
             $sunLevel = 'No entry found!';
             $waterLevel = 'No entry found!';
             $careNotes = 'No entry found!';
+            $dateAdded = 'No entry found!';
             include('view/plant_detail.php');
             break;
         } elseif (!empty($details)) {
             $sunLevel = $details[0][2];
             $waterLevel = $details[0][3];
             $careNotes = $details[0][4];
+            $dateAdded = 'No entry found!';
             include('view/plant_detail.php');
             break;
         }
         /* include('view/plant_detail.php');
         break; */
     case 'go_to_add_room_form':
+        //get add room form
         include('view/add_room_form.php');
         break;
     case 'submit_add_room_form':
-        $roomName = htmlspecialchars(filter_input(INPUT_POST, 'plantName'));
-        $roomID = add_new_room($roomName);
-        //functions to get room and plant data
-        $roomName = get_room_name($roomID);
-        $plants = get_plants_by_room($roomID);
-        include('view/list_plants.php');
-        break;
+        $roomName = htmlspecialchars(filter_input(INPUT_POST, 'roomName', FILTER_SANITIZE_SPECIAL_CHARS));
+        //room name can't be empty
+        if($roomName == '') {
+            $message = 'Please enter a name for the new room.';
+            include('view/add_room_form.php');
+            break;
+        } //room name can't be a number
+        else if(is_numeric($roomName)) {
+            $message = 'Please enter a word or short phrase. No numbers!';
+            include('view/add_room_form.php');
+            break;
+        } else {
+            //add new room
+            $roomID = add_new_room($roomName);
+            //functions to get room and plant data
+            $roomName = get_room_name($roomID);
+            $plants = get_plants_by_room($roomID);
+            include('view/list_plants.php');
+            break;
+        }
+        
     case 'go_to_add_plant_form':
         $roomID = filter_input(INPUT_POST, 'roomID');
         $roomName = get_room_name($roomID);
@@ -68,11 +90,16 @@ switch($action) {
         break;
     case 'submit_add_plant_form':
         //input plant details and room id from form
-        $plantName = htmlspecialchars(filter_input(INPUT_POST, 'plantName'));
+        $plantName = htmlspecialchars(filter_input(INPUT_POST, 'plantName', FILTER_SANITIZE_SPECIAL_CHARS));
         $roomID = filter_input(INPUT_POST, 'roomID');
         $sunLevel = filter_input(INPUT_POST, 'sunLevel');
         $waterLevel = filter_input(INPUT_POST, 'waterLevel');
         $careNotes = filter_input(INPUT_POST, 'notes');
+        if($plantName == '') {
+            $message = 'Please enter a name for the new plant.';
+            include('view/add_plant_form.php');
+            break;
+        } 
         $plantID = add_new_plant($plantName, $roomID);
         //if any care detail fields contain data, insert data into care_details table
         if(!empty($sunLevel || $waterLevel || $careNotes)) {

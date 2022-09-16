@@ -2,7 +2,7 @@
 
 <h2>Add New Plant</h2>
 <div class="message">
-    <p><?php if(isset($message)){ echo $message; } ?></p>
+    <p><?php if(isset($message)){ echo htmlspecialchars($message); } ?></p>
 </div>
 <form action="." method="POST">
     <lable>In Room: <?php echo ucfirst($roomName); ?></lable> 

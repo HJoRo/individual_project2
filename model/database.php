@@ -1,7 +1,7 @@
 <?php
 $dsn = 'mysql:host=localhost;dbname=individual_project';
 $username = 'root';
-$password = 'tgX[hKxsQ6';
+$password = '';
 $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 
 try {
