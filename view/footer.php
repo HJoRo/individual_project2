@@ -1,3 +1,4 @@
+<br>
 <footer>
     <p>
     <a href="index.php?action=view_all_rooms">Home</a> | Created by Haley Rohe, 2022

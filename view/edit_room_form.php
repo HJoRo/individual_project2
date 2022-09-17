@@ -9,6 +9,6 @@
         <br>
     <input type="hidden" name="action" value="submit_edit_room_form">
     <input type="hidden" name="roomID" value="<?php echo $roomID; ?>">
-    <button type="submit" class="btn btn-outline-primary">Edit Room</button>
+    <button type="submit" class="btn btn-outline-success">Edit Room</button>
 </form>
 <?php include 'view/footer.php'; ?>

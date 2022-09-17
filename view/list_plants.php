@@ -27,13 +27,13 @@
             <input type="hidden" name="plantName" value="<?php echo $plantName; ?>">
             <input type="hidden" name="dateAdded" value="<?php echo $dateAdded; ?>">
             <input type="hidden" name="action" value="view_single_plant">
-            <button type="submit" class="btn btn-outline-primary">View Plant</button>
+            <button type="submit" class="btn btn-outline-success">View Plant</button>
         </form></td>
         <td><form action="." method="POST">
             <input type="hidden" name="roomID" value="<?php echo $roomID; ?>">
             <input type="hidden" name="plantID" value="<?php echo $plantID; ?>">
             <input type="hidden" name="action" value="delete_plant">
-            <button type="submit" class="btn btn-outline-primary">Delete</button>
+            <button type="submit" class="btn btn-outline-success">Delete</button>
             </form>
         </td>
     </tr>
@@ -42,6 +42,6 @@
 <form action="." method="POST">
     <input type="hidden" name="roomID" value="<?php echo $roomID; ?>">
     <input type="hidden" name="action" value="go_to_add_plant_form">
-    <button type="submit" class="btn btn-outline-primary">Add Plant</button>
+    <button type="submit" class="btn btn-outline-success">Add Plant</button>
 </form>
 <?php include 'view/footer.php'; ?>

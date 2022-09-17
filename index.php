@@ -10,7 +10,7 @@ if ($action == NULL) {
     }
 }
 //NEED TO GET DATE_ADDED COLUMN TO SHOW UP IN DETAILS ARRAY
-
+//Also modify styling -- can't get boostrap overridden for some reason
 switch($action) {
     case 'view_all_rooms':
         //TEST AREA TEST TEST

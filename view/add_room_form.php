@@ -8,6 +8,6 @@
         <input type="text" name="roomName" >
         <br>
     <input type="hidden" name="action" value="submit_add_room_form">
-    <button type="submit" class="btn btn-outline-primary">Add Room</button>
+    <button type="submit" class="btn btn-outline-success">Add Room</button>
 </form>
 <?php include 'view/footer.php'; ?>

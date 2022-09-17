@@ -44,6 +44,6 @@ include 'view/header.php'; ?>
 </form><form action="." method="POST">
     <input type="hidden" name="action" value="view_single_room">
     <input type="hidden" name="roomID" value="<?php echo $roomID ?>">
-    <button type="submit" class="btn btn-outline-primary">Edit Details</button>
+    <button type="submit" class="btn btn-outline-success">Edit Details</button>
     </div></form>
 <?php include 'view/footer.php'; ?>

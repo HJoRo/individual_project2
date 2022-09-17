@@ -26,18 +26,18 @@ include 'view/header.php'; ?>
         <td><form action="." method="POST" id="view_room_form">
             <input type="hidden" name="roomID" value="<?php echo $roomID; ?>">
             <input type="hidden" name="action" value="view_single_room">
-            <button type="submit" class="btn btn-outline-primary">View Room</button>
+            <button type="submit" class="btn btn-outline-success">View Room</button>
         </form></td>
         <td><form action="." method="POST">
             <input type="hidden" name="roomID" value="<?php echo $roomID; ?>">
             <input type="hidden" name="action" value="edit_room">
-            <button type="submit" class="btn btn-outline-primary">Rename</button>
+            <button type="submit" class="btn btn-outline-success">Rename</button>
             </form>
         </td>
         <td><form action="." method="POST">
             <input type="hidden" name="roomID" value="<?php echo $roomID; ?>">
             <input type="hidden" name="action" value="delete_room">
-            <button type="submit" class="btn btn-outline-primary">Delete</button>
+            <button type="submit" class="btn btn-outline-success">Delete</button>
             </form>
         </td>
     </tr>
@@ -45,6 +45,6 @@ include 'view/header.php'; ?>
 </table>
 <form action="." method="POST">
     <input type="hidden" name="action" value="go_to_add_room_form">
-    <button type="submit" class="btn btn-outline-primary">Add Room</button>
+    <button type="submit" class="btn btn-outline-success">Add Room</button>
 </form></div>
 <?php include 'view/footer.php'; ?>

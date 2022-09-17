@@ -28,6 +28,6 @@
         <input name="notes" type="text"><br>
         <input type="hidden" name="roomID" value="<?php echo $roomID; ?>">
     <input type="hidden" name="action" value="submit_add_plant_form">
-    <button type="submit" class="btn btn-outline-primary">Add Plant</button>
+    <button type="submit" class="btn btn-outline-success">Add Plant</button>
 </form>
 <?php include 'view/footer.php'; ?>

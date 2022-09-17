@@ -31,7 +31,7 @@
             <input type="hidden" name="plantID" value="<?php echo $plantID; ?>">
             <input type="hidden" name="dateAdded" value="<?php echo $dateAdded; ?>">
             <input type="hidden" name="action" value="edit_plant_details">
-            <button type="submit" class="btn btn-outline-primary">Edit Details</button>
+            <button type="submit" class="btn btn-outline-success">Edit Details</button>
     </form>
     </div>
 <?php include 'view/footer.php'; ?>
