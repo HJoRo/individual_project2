@@ -10,7 +10,7 @@ if ($action == NULL) {
     }
 }
 //NEED TO GET DATE_ADDED COLUMN TO SHOW UP IN DETAILS ARRAY
-//Also modify styling -- can't get boostrap overridden for some reason
+//Also modify styling -- can't get boostrap's default variables overridden for some reason
 switch($action) {
     case 'view_all_rooms':
         //TEST AREA TEST TEST
@@ -44,14 +44,12 @@ switch($action) {
             $sunLevel = 'No entry found!';
             $waterLevel = 'No entry found!';
             $careNotes = 'No entry found!';
-            $dateAdded = 'No entry found!';
             include('view/plant_detail.php');
             break;
         } elseif (!empty($details)) {
             $sunLevel = $details[0][2];
             $waterLevel = $details[0][3];
             $careNotes = $details[0][4];
-            $dateAdded = 'No entry found!';
             include('view/plant_detail.php');
             break;
         }
